@@ -1,0 +1,55 @@
+1、git安装完成后，需要配置git config
+在git bash中输入 
+git config --global user.name "erkuizhang"
+git config --global user.name "erkuizhang@163.com"
+来设置全局git config。
+也可以在单个仓库中去掉--global进行单个仓库的配置。
+查看config配置命令：git config --list
+
+2、常见基础命令
+初始化版本库：		git init
+添加文件到版本库： 	git add xx	git commit -m ""
+查看仓库状态：	 	git status
+克隆到本地仓库：	git clone
+从远程仓库下拉：	git pull
+推送到远程仓库：	git push
+
+3、暂存区文件回滚：	
+版本库到暂存区：	git reset HEAD xx
+暂存区到工作区：	git checkout -- xx
+版本库到暂存区和工作区： git checkout HEAD xx
+
+4、版本回滚：
+git reset --hard CommitId
+
+5、ssh秘钥生成：	ssh-keygen -t rsa -C "erkuizhang@163.com"
+将在用户家目录生成.ssh文件夹
+秘钥添加到github是否成功：	ssh -T git@github.com
+
+6、在本地和github分别创建仓库，之后关联到一起
+create a new repository on the command line
+echo "# MyLib" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:erkuizhang/MyLib.git
+git push -u origin master
+
+7、克隆仓库
+git clone git@github.com:erkuizhang/MyLib.git
+
+8、标签管理
+查看所有标签：	git tag
+创建标签：		git tag name
+指定提交信息：	git tag -a name -m "comment"
+删除标签：		git tag -d name
+标签发布：		git push origin name
+
+9、分支管理
+查看所有分支：	git branch *为当前所在分支
+创建分支：		git branch name
+切换分支：  	git checkout name
+将name分支merge到master分支：
+先切换到master分支，再git merge name
+
+
